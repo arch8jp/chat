@@ -1,7 +1,7 @@
 {
-  "name": "bbs",
+  "name": "chat",
   "version": "0.1.0",
-  "description": "My awesome Nuxt.js project",
+  "description": "arch8.jp制作のオープンソースチャットアプリ",
   "author": "arch8jp",
   "private": true,
   "scripts": {
@@ -20,7 +20,6 @@
     "moment": "^2.23.0",
     "nuxt": "^2.0.0",
     "socket.io": "^2.2.0",
-    "vue-infinite-loading": "^2.4.3",
     "vue-socket.io": "^3.0.4"
   },
   "devDependencies": {
