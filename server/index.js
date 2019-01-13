@@ -6,12 +6,9 @@ const app = express();
 const host = process.env.HOST || "127.0.0.1";
 const port = process.env.PORT || 3000;
 
-const apiRouter = require("./apiRouter");
-
 app.set("port", port);
 
 app.use(bodyParser.json());
-app.use("/", apiRouter);
 
 // Import and Set Nuxt.js options
 const config = require("../nuxt.config.js");
@@ -31,10 +28,19 @@ async function start() {
   app.use(nuxt.render);
 
   // Listen the server
-  app.listen(port, host);
+  const http = app.listen(port, host);
   consola.ready({
     message: `Server listening on http://${host}:${port}`,
     badge: true
+  });
+
+  const io = require("socket.io").listen(http);
+  io.on("connection", socket => {
+    console.log("a user connected");
+    socket.on("message", message => {
+      const post = { message, created_at: Date.now() };
+      io.sockets.emit("post", post);
+    });
   });
 }
 start();

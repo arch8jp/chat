@@ -29,7 +29,7 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ["~/plugins/vue-infinite-loading"],
+  plugins: [{ src: "~/plugins/vue-socket-io.js", ssr: false }],
 
   /*
   ** Nuxt.js modules
