@@ -1,10 +1,10 @@
-# bbs
+# chat
 
 > My awesome Nuxt.js project
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ yarn install
 

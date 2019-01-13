@@ -1,3 +1,3 @@
 #!/bin/sh
 
-/usr/bin/systemctl restart bbs
+/usr/bin/systemctl restart chat

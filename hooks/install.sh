@@ -1,8 +1,8 @@
 #!/bin/bash
-cd /home/ec2-user/repos/bbs
-export API_URL=https://bbs.arch8.jp
+cd /home/ec2-user/repos/chat
+export API_URL=https://chat.arch8.jp
 npm install
 npm run build
 
-cp ./hooks/bbs.service /etc/systemd/system/bbs.service
-/usr/bin/systemctl enable bbs
+cp ./hooks/chat.service /etc/systemd/system/chat.service
+/usr/bin/systemctl enable chat

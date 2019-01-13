@@ -2,13 +2,13 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/repos/bbs
+    destination: /home/ec2-user/repos/chat
 permissions:
   - object: /
     owner: ec2-user
     group: ec2-user
     mode: 777
-    pattern: '**'
+    pattern: "**"
 hooks:
   AfterInstall:
     - location: hooks/install.sh

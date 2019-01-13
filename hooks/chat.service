@@ -5,8 +5,8 @@ After=network.target
 [Service]
 Type=simple
 ExecStart=/usr/bin/npm run start
-WorkingDirectory=/home/ec2-user/repos/bbs
-EnvironmentFile=/home/ec2-user/repos/bbs/hooks/environment
+WorkingDirectory=/home/ec2-user/repos/chat
+EnvironmentFile=/home/ec2-user/repos/chat/hooks/environment
 Restart=on-failure
 
 [Install]
