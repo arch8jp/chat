@@ -14,6 +14,10 @@ app.use(bodyParser.json());
 const config = require("../nuxt.config.js");
 config.dev = !(process.env.NODE_ENV === "production");
 
+const genHue = id =>
+  Array.from(id).reduce((prev, current) => prev + current.charCodeAt(), 0) %
+  360;
+
 async function start() {
   // Init Nuxt.js
   const nuxt = new Nuxt(config);
@@ -38,7 +42,11 @@ async function start() {
   io.on("connection", socket => {
     console.log("a user connected");
     socket.on("message", message => {
-      const post = { message, created_at: Date.now() };
+      const post = {
+        message,
+        created_at: Date.now(),
+        color: genHue(socket.id)
+      };
       io.sockets.emit("post", post);
     });
   });

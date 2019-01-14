@@ -1,6 +1,9 @@
 <template>
   <div>
     <v-list-tile>
+      <v-list-tile-avatar>
+        <div :style="{ '--color': post.color }" class="avatar-image"/>
+      </v-list-tile-avatar>
       <v-list-tile-content>
         <v-list-tile-title>{{ post.message }}</v-list-tile-title>
       </v-list-tile-content>
@@ -29,3 +32,11 @@ export default {
   }
 };
 </script>
+
+<style>
+.avatar-image {
+  height: 100%;
+  width: 100%;
+  background: hsl(var(--color), 80%, 60%);
+}
+</style>
