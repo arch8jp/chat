@@ -2,7 +2,7 @@
   <div>
     <v-list-tile>
       <v-list-tile-avatar>
-        <div :style="{ '--color': post.color }" class="avatar-image"/>
+        <v-icon :style="{ color: `hsl(${post.color}, 80%, 60%)` }" large>account_circle</v-icon>
       </v-list-tile-avatar>
       <v-list-tile-content>
         <v-list-tile-title>{{ post.message }}</v-list-tile-title>
@@ -32,11 +32,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.avatar-image {
-  height: 100%;
-  width: 100%;
-  background: hsl(var(--color), 80%, 60%);
-}
-</style>
